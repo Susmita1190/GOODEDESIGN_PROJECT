@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 80px;
+    font-family: sans-serif;
+}
+
+.navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    z-index: 999;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* === Left Logo === */
+.logo img {
+    height: 40px;
+}
+
+/* === Center Nav Menu === */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    flex-grow: 1;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: #222;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #007bff;
+}
+
+/* === Dropdown === */
+.dropdown-wrapper {
+    position: relative;
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 180px;
+    padding: 10px 0;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: 0.3s ease;
+    z-index: 999;
+}
+
+.dropdown-wrapper:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown li {
+    padding: 8px 20px;
+}
+
+.dropdown-link {
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-link:hover {
+    color: #007bff;
+}
+
+/* === Right Toggle Icon === */
+.navbar-right {
+    display: none; /* Hidden on desktop */
+}
+
+/* === Responsive (Mobile) === */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-wrap: wrap;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: white;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        z-index: 998;
+        padding: 10px 0;
+    }
+
+    .nav-menu.open {
+        display: flex;
+    }
+
+    .dropdown {
+        position: relative;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+    }
+
+    .navbar-right {
+        display: block; /* Show toggle on small screen */
+        font-size: 24px;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .dropdown-wrapper:hover .dropdown {
+        transform: none;
+    }
+}

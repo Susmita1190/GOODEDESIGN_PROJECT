@@ -1,0 +1,105 @@
+.work-together-section {
+    background-color: #5c55e2; /* solid blue background */
+    color: #fff;
+    text-align: center; /* center all text */
+    padding: 40px 20px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.work-content {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 10px;
+    margin-top: -30px; /* move text up */
+}
+
+.subheading {
+    color: #f9b233;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.main-heading {
+    font-size: 2.8rem;
+    font-weight: bold;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.characters-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 500px;
+    z-index: 1;
+    margin-top: -60px;
+    gap: 120px; /* increase gap between images */
+}
+
+.character {
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+}
+
+/* Side characters lower */
+.woman,
+.man {
+    height: 320px;
+    margin-bottom: 40px; /* lower side images */
+}
+
+/* Center chat-group bigger and raised */
+.chat-group {
+    position: absolute;
+    bottom: 55px; /* raise up */
+    height: 400px; /* bigger */
+    z-index: 1;
+}
+/* Common bubble styles */
+.bubble {
+    position: absolute;
+    bottom: -100px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    opacity: 0.8;
+    animation-name: bubbleMove;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    width: calc(20px + var(--i) * 12px);
+    height: calc(20px + var(--i) * 12px);
+    left: calc(var(--i) * 12%);
+    animation-duration: calc(12s + var(--i) * 5s);
+    animation-delay: calc(-1s * var(--i));
+    z-index: 0;
+}
+
+/* Yellow */
+.bubble-yellow {
+    background: rgba(249, 178, 51, 0.35);
+}
+
+/* Pink */
+.bubble-pink {
+    background: rgba(255, 99, 172, 0.35);
+}
+
+/* Darker bubbles */
+.bubble-dark {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+@keyframes bubbleMove {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-120vh) translateX(20px);
+        opacity: 0;
+    }
+}

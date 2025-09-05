@@ -1,0 +1,88 @@
+.contact-section {
+    background-color: #fef8f5;
+    padding: 0 20px 80px 20px; /* Remove top padding */
+    margin-top: -20px; /* Pull section upward to remove gap */
+    font-family: "Segoe UI", sans-serif;
+}
+
+.contact-form-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.form-left {
+    flex: 1 1 400px;
+    padding: 40px;
+}
+
+.form-left h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #222;
+}
+
+.form-left form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-left input,
+.form-left textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #f9f5f3;
+}
+
+.form-left button {
+    padding: 12px;
+    background-color: #1e1c3d;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-left button:hover {
+    background-color: #3a3760;
+}
+
+.form-right {
+    flex: 1 1 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    background-color: #fef0e9;
+    color: #333;
+}
+
+.form-right h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.form-right p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.form-right a {
+    color: #5a57d5;
+    text-decoration: none;
+}
+
+.form-right a:hover {
+    text-decoration: underline;
+}

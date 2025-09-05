@@ -1,0 +1,14 @@
+.service-page {
+    min-height: 100vh;
+    background-color: #f9f9f9;
+}
+
+.service-page h2 {
+    color: #007bff;
+}
+
+.service-page .list-group-item {
+    background: transparent;
+    border: none;
+    padding-left: 0;
+}
