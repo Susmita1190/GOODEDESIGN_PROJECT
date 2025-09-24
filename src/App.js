@@ -1,4 +1,3 @@
-// App.js
 import React from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Nav from "./components/Nav";
@@ -8,22 +7,25 @@ import { Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import HomePage from './components/HomePage';
-import ServicesSection from './components/ServicesSection';
-import SignupSection from './components/SignupSection';
-import OurProjects from './components/OurProjects';
-import WorkTogether from './components/WorkTogetherSection';
-import Footer from './components/Footer';
-import Design from './page/Services/Design';
-import Redesign from './page/Services/Redesign';
-import Development from './page/Services/Development';
-import Website from './page/Services/Website';
-import Adds from './page/Services/Adds';
-import Marketing from './page/Services/Marketing';
+
+import Design from "./page/Services/Design";
+import Development from "./page/Services/Development";
+import Redesign from "./page/Services/Redesign";
+import Marketing from "./page/Services/Marketing";
+import Ads from "./page/Services/Ads";
+import Website from "./page/Services/Website";
+
+import OurStory from "./page/OurStory";
+import OurTeam from "./page/OurTeams";
+import OurClients from "./page/Clients/OurClients";
+import Testimonials from "./page/Clients/Testimonials";
+import Insights from "./page/Blogs/Insights";
 
 function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const isHome = location.pathname === "/";
   const isEmailModal = location.pathname === "/contact/email";
   const isVisitModal = location.pathname === "/contact/visit";
 
@@ -31,22 +33,31 @@ function App() {
 
   return (
     <>
+      
       <Nav />
-      <HomePage/>
-     <ServicesSection/>
-     <SignupSection/>
-     <OurProjects/>
-     <WorkTogether/>
-     <Footer/>
+
+      {isHome && (
+        <>
+          <HomePage />
+         
+        </>
+      )}
+
       <Routes>
-        <Route path="/" element={<HomePage />} />
         <Route path="/services/design" element={<Design />} />
         <Route path="/services/redesign" element={<Redesign />} />
         <Route path="/services/development" element={<Development />} />
         <Route path="/services/website" element={<Website />} />
-        <Route path="/services/adds" element={<Adds />} />
+        <Route path="/services/ads" element={<Ads />} />
         <Route path="/services/marketing" element={<Marketing />} />
+        <Route path="/team" element={<OurTeam/>} />
+        <Route path="/story" element={<OurStory/>} />
+        <Route path="/clients/ourclients" element={<OurClients/>} />
+        <Route path="/clients/testimonials" element={<Testimonials/>} />
+        <Route path="/blogs/insights" element={<Insights/>}/>
       </Routes>
+
+
 
       <Modal show={isEmailModal} onHide={handleClose}>
         <Modal.Header closeButton>
